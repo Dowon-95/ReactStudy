@@ -1,0 +1,135 @@
+<!-- 혼자 실습 =  quiz3.html-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>객실 예약</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .navi {
+            width: 960px;
+            height: 60px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+        .navi ul {
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .navi ul li {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+        .navi a:link, .navi a.visited{
+            display: block;
+            font-size: 14px;
+            color: #000;;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navi a:hover , .navi a:focus {
+            background-color: #222;
+            color: #fff;
+        }
+        /* 마우스 포인터로 클릭을 했을때 스타일 적용 */
+        .navi a:active {
+            background-color: yellow;
+        }
+
+        /*checked , not 이용*/
+        form {
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        fieldset {
+            margin-bottom: 30px;
+            border: 1px solid gainsboro;
+            
+        }
+        
+        ul{
+            padding: 10px auto;
+        }
+
+        ul li {
+            list-style: none;
+            padding: 10px ;
+        }
+        /*":checked"
+          선택한 항목의 스타일을 적용
+          ex. form에 라디오 박스, 체크 박스에서 선택된 항목에 스타일을 적용
+        - ":not"
+          특정 요소를 제외하고 스타일을 적용*/
+        button {
+            border: 1px solid black;
+            border-radius: 15px;
+            width: 5em;
+            height: 2.5em;
+            margin: auto;
+            display: block;
+        }
+        
+        form input[type = "radio"]:checked +label:not {
+            color: red ;
+            background-color: black;
+        }
+
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <nav class="navi">
+                 <ul>
+                    <li><a href="#intro" >이용 안내</a></li>
+                    <li><a href="#room" >객실 소개</a></li>
+                    <li><a href="#reservation" >예약 방법 및 요금</a></li>
+                    <li><a href="#">예약하기</a></li>
+                </ul>
+            </nav>
+        </div>
+     <form>    
+        <fieldset>
+            <legend>개인 정보</legend>
+            <ul>
+                <li>
+                    <label id="user-name">이름</label>
+                    <input type="text" id="user-name">
+                </li>
+                <li>
+                    <label id="phone">연락처</label>
+                    <input type="tel" id="phone">
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <legend>객실 형태</legend>
+            <ul>
+                <li>
+                    <label><input type="radio" name="reservation" value="normal">기본형(최대 2인)</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="reservation" value="family">가족형(최대 8인)</label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <div>
+            <button type="submit">제출</button>
+        </div>
+    </form>
+</body>
+</html>

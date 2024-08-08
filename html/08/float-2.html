@@ -1,0 +1,61 @@
+<!-- float-2.html -->
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+            body 의 margin : 8 => browser의 기본 margin.
+        */
+        
+        /* bowser 의 기본 마진을 0 으로 초기화 */
+      /*  * {
+            margin: 0;  
+        }*/
+
+        div {
+            padding: 20px;
+            margin: 10px;
+        }
+        #box1 {
+            /*
+                body 기준으로 왼쪽에서 부터 자리를 잡게 됨.
+                body 의 magin 이 중첩되지 않도록 floating 됨.
+            */
+            background: yellowgreen;    /* 위치 기준 : 원래 그 자리 .*/
+            float: left;
+        }
+        #box2 {     
+            /* 
+                box1 을 기준으로 margin 을 유지하면서, floating 됨.
+            */
+            background: blueviolet;
+            float: left;
+        }
+        #box3 {     
+            /* 
+                block level 요소임.
+                floating 된 box1, box2 와의 위치 관계는 없음.
+                body 를 기준으로 왼쪽의 마진은 margin(body, box3) 은 유지하게 되고
+                top 쪽의 margin은 중첩되게 위치함.
+                ( => block level 요소가 세로로 위치하는 경우 마진 중첩이 발생. ) 
+            */
+            background: greenyellow;    
+        }
+        #box4 {     
+            /* 
+                box2, box3 의 margin 과 중첩이 되지  않도록, margin을 유지하면서, floating됨.
+            */
+            background: skyblue;
+            float: left; 
+        }
+    </style>
+ </head>
+ <body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+    <div id="box4">박스4</div>
+ </body>
+ </html>

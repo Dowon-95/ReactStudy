@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .navi {
+            width: 960px;
+            height: 60px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        /*
+            향후에 순서없이 리스트를 추가될수 있어, 스타일의 적용이 함부로 되지 않도록 하기위해서
+            class 스타일을 사용하여 스타일이 부분적으로 적용이 되도록 제어하기 위함.        
+        */
+
+        .navi ul {
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .navi ul li {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+
+        /*
+            사용자 특정 동작에 반응하는 가상 클래스
+        */
+        /* 방문하지 않은 링크, 방문한 링크에 스타일 적용 */
+        .navi a:link, .navi a.visited{
+            display: block;
+            font-size: 14px;
+            color: #000;;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* 마우스 포인터를 올리거나 초점을 맞추었을때 스타일 적용 */
+        .navi a:hover , .navi a:focus {
+            background-color: #222;
+            color: #fff;
+        }
+        /* 마우스 포인터로 클릭을 했을때 스타일 적용 */
+        .navi a:active {
+            background-color: yellow;
+        }
+
+        /* 이용안내, 객실소개, 예약방법 및 요금 contents의 스타일 적용*/
+        .contents {
+            margin: 30px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #222;
+            border-radius: 5px;
+        }
+
+        /* 요소 상태에 따른 가상 클래스 */
+        /* :target 가상 클래스 선택자 - 앵커 대상에 스타일 적용 */
+
+        /* 이용 안내 */
+        /* 
+            앵커를 사용해 intro 라는 target 위치로 이동하는 경우
+            intro 라는 요소에 스타일을 적용
+            - 배경색 : 파란색, 글자색 : 흰색
+        */
+        #intro:target {
+            background-color: #0069e0;
+            color: #fff;
+        }
+
+        /* 객실 소개 */
+        /* 배경색 : 주황색*/
+        #room:target{
+            background-color: orange;
+            color: #fff;
+        }
+
+        /* 예약 방법 및 요금 */
+        /* 배경색 : 베이지색 */
+        #reservation:target{
+            background-color: beige;
+        }
+
+
+        /*
+            1. contents2 안의 자식 요소중에서 3번째 자식 요소를 선택
+            2. contents2 안에서 p tag 중에서 3번째 요소를 선택
+        */
+        /*
+            구조 가상 클래스 : 웹 문서의 구조를 기준으로 특정 위치에 있는 요소를 선택.
+
+            1. :nth-child(n) - 부모 안에 있는 모든 요소 중에서 n번째 자식 요소를 선택 
+            2. A:nth-of-type(n) - 부모 안에 있는 A 요소 중에서 n번째 요소를 선택.
+        */
+        .contents2 :nth-child(3){
+            background-color: #ff0;
+        }
+        .contents2 p:nth-of-type(3){
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navi">
+             <ul>
+                <li><a href="#intro" >이용 안내</a></li>
+                <li><a href="#room" >객실 소개</a></li>
+                <li><a href="#reservation" >예약 방법 및 요금</a></li>
+                <li><a href="room-reservation.html">예약하기</a></li>
+            </ul>
+        </nav>
+
+        <div  class="contents">
+            <h2>이용 안내</h2>
+            <p>Excepteur do est eiusmod nulla et veniam. Labore officia officia ex aliqua exercitation aliqua laborum Lorem deserunt ut ullamco labore anim. Officia eu duis aliquip incididunt. Do laborum et consequat aliqua sint consectetur.</p>
+
+            <h2>객실 소개</h2>
+            <p>Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cillum tempor minim fugiat est dolor. Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore. Sit in non fugiat minim sit.</p>
+            <h2>예약 방법 및 요금</h2>
+            <p>Fugiat aliquip mollit proident velit magna esse ea officia eu. Esse do aliqua proident culpa eiusmod duis minim deserunt eu reprehenderit ut tempor. </p>
+          </div>
+
+          <!--
+          1. contents2 안의 자식 요소중에서 3번째 자식 요소를 선택
+          2. contents2 안에서 p tag 중에서 3번째 요소를 선택
+          -->
+          <div class="contents2">
+            <h2>이용 안내</h2>
+            <p>p1 - Excepteur do est eiusmod nulla et veniam. Labore officia officia ex aliqua exercitation aliqua laborum Lorem deserunt ut ullamco labore anim. Officia eu duis aliquip incididunt. Do laborum et consequat aliqua sint consectetur.</p>
+            <p>p2 - Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cillum tempor minim fugiat est dolor. Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore. Sit in non fugiat minim sit.</p>
+            <h2>객실 소개</h2>
+            <p>p3 - Qui magna culpa minim reprehenderit magna in nisi ipsum. Ad cillum tempor minim fugiat est dolor. Cillum sit qui minim sint officia nostrud cillum cupidatat pariatur ipsum eiusmod velit labore. Sit in non fugiat minim sit.</p>
+            <h2>예약 방법 및 요금</h2>
+            <p>p4 - Fugiat aliquip mollit proident velit magna esse ea officia eu. Esse do aliqua proident culpa eiusmod duis minim deserunt eu reprehenderit ut tempor. </p>
+          </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- fontStyle.html -->
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style> /* 내부 스타일 쉬트 */
+        body{ /* 타입 스타일 */
+            font-size: 20px;
+            font-family: 굴림;
+        }
+        h1{ /* 내부 스타일 쉬트 */
+            font-family: 바탕;
+            font-size: 3em; /* 글자 크기, 1em = 약 16px */
+        }
+        .accent { /* 클래스 스타일 */
+            font-size: 150%; /* body 의 font-size 의 150% */
+            font-weight: 800;
+        }
+        .italic {   /* 클래스 스타일 */
+            font-style: italic;
+        }
+        h2{
+            color: #0000ff; /* 16진수 표기법 */
+        }
+        h3{
+            color: green; /* 색상 이름 */
+        }
+        .accent2 {
+            color: hsl(0, 100%, 50%); /* hsl 표기법 ( h:색상 , s:채도 , l:밝기 ) */
+            font-weight: bold;
+        }
+    </style>
+ </head>
+ <body>
+    <h1>레드향</h1>
+    <p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불린다.</p>
+    <p class = "italic">레드향은 한라봉과 귤을 교배한 것으로 일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+
+    <h2>레드향</h2>
+    <h3>레드향</h3>
+    <p>껍질에 붉은 빛이 돌아 <span class="accent2">레드향</span>이라 불린다.</p>
+ </body>
+ </html>

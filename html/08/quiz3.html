@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>quiz 3</title>
+		<style>
+            /*
+                1. 순서 없는 리스트의 항목 배치
+                    현재는 위에서 밑으로 배치 => 왼쪽에서 오른쪽으로 배치 (float)
+                2. a tag 에 마우스 동작에 따른 설정
+                    의사 클래스를 사용해서 스타일 적용
+
+                    의사 클래스(가상 클래스)
+                    a: link - 방문 전 링크 상태
+                    a:visited - 방문 후 링크 상태
+                    a:hover - 마우스를 오버 했을 때 링크 상태
+                    a:active - 클릭했을때 링크 상태
+            */
+            #container {
+                margin: 100px  auto;
+            }
+			ul{
+                list-style: none;
+                
+            }
+            ul li {
+                float: left;
+            }
+            a{
+                padding-top: 10px;
+                text-decoration: none;
+                width: 5em;
+                height: 2em;
+                text-align: center;
+                background-color: gainsboro;
+                display: inline-block;
+            }
+            a:link, a:visited {
+                color: black;   /* text color */
+                text-decoration: none;
+            }
+            a:hover{
+                color: white;   /* text color */
+                background-color: black;
+            }
+		</style>
+	</head>
+	<body>
+		<nav id="container">
+			<ul>
+				<li><a href="#">메뉴1</a></li>
+				<li><a href="#">메뉴2</a></li>
+				<li><a href="#">메뉴3</a></li>
+				<li><a href="#">메뉴4</a></li>
+			</ul>
+		</nav>
+	</body>
+</html>

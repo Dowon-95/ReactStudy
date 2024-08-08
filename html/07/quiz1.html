@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>최신 웹 디자인 트렌드</title>
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            padding: 10px;  /* container의 폭 크기 */
+            width: 700px;   /* 내용과 border 사이의 여백 */
+        }
+        .subject {
+            color: brown;
+            letter-spacing: 1px; 
+            font-size: larger; /* 상대 크기로 폰트 사이즈 지정 */
+            /* lager, smaller 
+                부모 요소의 글자 크기 기준으로 더 크거나 작게 표시.
+                즉, bowser 의 기본 폰트 사이즈 16px 보다 
+                조금 더 크게 상대적인 크기(19.2px)로 지정된 상태.
+            */
+            font-weight: 700;
+        }
+
+         h1 {
+            font-size: 30;
+        }
+        ul {
+            list-style: none; /* list 항목의 텍스트 앞에 사용되는 숫자, 문자 ,이미지등의 마크모양 없애기 */
+            font-size: 18px;
+            
+        }
+        li {
+            margin: 5px;
+            line-height: 2.0; /* 순서 없는 리스트 항목의 높이 조정 */
+            /*
+                line-height 란? 
+                내용(text)의 위 아래에 leading 영역이 나뉘어져 있음.
+                ( leading 영역이 있어야지만 text 위 아래로 공간이 생김. )
+                따라서, font-size 와 leading 영역을 포함한 위 아래의 높이가 line-height의 값이 됨.
+
+                그래서, line-height 의 값을 높이게 되면, font 의 크기는 그대로 이고, 
+                leading 영역이 위아래로 넓어짐.
+            */
+        }
+    </style>
+  </head>
+  <body>
+		<div class="container">
+			<h1>최신 웹 디자인 트렌드</h1>
+			<ul>
+				<li><span class="subject">반응형 웹 디자인</span> - 다양한 화면 크기에 최적화하다</li>
+				<li><span class="subject">플랫 디자인 </span> - 입체에서 평면으로 </li>
+				<li><span class="subject">풀스크린 배경 </span> - 콘텐츠에 집중</li>
+				<li><span class="subject">원 페이지 사이트 </span> - 한 페이지에 모든 내용을 담다</li>
+				<li><span class="subject">패럴랙스 스크롤링 </span> - 동적인 효과로 강한 인상을!</li>
+				<li><span class="subject">웹 폰트 </span> - 웹 타이포그래피를 받쳐주는 기술</li>
+			</ul>
+		</div>
+  </body>
+</html>
